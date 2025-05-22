@@ -18,8 +18,14 @@ jobs:
           hugo-version: '0.146.1'
           extended: true
 
+      - name: Clean public folder
+        run: rm -rf public
+
       - name: Build site
-        run: hugo --minify
+        run: hugo --minify --baseURL="https://f3d4r.github.io/resume_final/" --cleanDestinationDir
+      
+      - name: Add .nojekyll
+        run: touch public/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

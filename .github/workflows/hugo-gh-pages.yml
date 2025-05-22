@@ -22,7 +22,7 @@ jobs:
         run: rm -rf public
 
       - name: Build site
-        run: hugo --minify --baseURL="https://f3d4r.github.io/resume_final/" --cleanDestinationDir
+        run: hugo --minify --baseURL="https://f3d4r.github.io/ov/" --cleanDestinationDir
       
       - name: Add .nojekyll
         run: touch public/.nojekyll
